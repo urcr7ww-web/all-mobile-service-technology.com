@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101827">
+<meta name="description" content="All Mobile Service & Technology — mobile phone repair enquiries, starting-price estimates and smartphone assistance in Secunderabad, Hyderabad.">
+<meta property="og:title" content="All Mobile Service & Technology">
+<meta property="og:description" content="Mobile repair enquiries, clear estimate requests and smartphone assistance.">
+<meta name="robots" content="index, follow">
+<title>All Mobile Service & Technology</title>
+<style>
+:root {
+  color-scheme: light dark;
+  --site-primary: #2563eb;
+  --site-on-primary: #ffffff;
+  --site-secondary: #101827;
+  --site-on-secondary: #ffffff;
+  --site-background: #f4f7fc;
+  --site-on-background: #101827;
+  --site-font-body: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --site-font-heading: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --site-heading-scale: 1;
+  --site-spacing-scale: 1;
+  --site-radius-scale: 1;
+  --site-decoration-opacity: 1;
+  --ink: #101827;
+  --muted: #64748b;
+  --line: #e3e9f2;
+  --surface: #ffffff;
+  --soft: #edf3ff;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; font-family: var(--site-font-body); background: var(--site-background); color: var(--site-on-background); }
+a { color: inherit; text-decoration: none; }
+button, input, select, textarea { font: inherit; }
+#app { min-height: 100vh; width: 100%; background-color: var(--site-background); color: var(--site-on-background); border-radius: 0; }
+.wrap { width: min(1160px, 92%); margin: 0 auto; }
+header { position: sticky; top: 0; z-index: 20; background: var(--surface); border-bottom: 1px solid var(--line); }
+.nav { min-height: 74px; display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+.brand { font-family: var(--site-font-heading); font-weight: 900; letter-spacing: -.7px; line-height: 1.05; font-size: 16px; }
+.brand span { display: block; color: var(--site-primary); font-size: 12px; letter-spacing: 2px; margin-top: 5px; }
+.navlinks { display: flex; align-items: center; gap: 24px; color: #475569; font-size: 13px; font-weight: 700; }
+.navlinks a:hover { color: var(--site-primary); }
+.btn, .navcta { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 13px 18px; border: 0; border-radius: calc(12px * var(--site-radius-scale)); background: var(--site-primary); color: var(--site-on-primary); font-weight: 800; font-size: 13px; cursor: pointer; transition: transform .18s, opacity .18s; }
+.btn:hover, .navcta:hover { transform: translateY(-2px); }
+.btn.secondary { background: #fff; color: var(--ink); }
+.btn.outline { background: transparent; color: var(--site-primary); border: 1px solid #cbd8f5; }
+.menu-toggle { display: none; background: transparent; border: 1px solid var(--line); color: var(--ink); border-radius: 10px; padding: 9px 12px; }
+.hero { overflow: hidden; color: #fff; background: radial-gradient(circle at 83% 22%, #254b87 0, #172b4d 34%, #101827 72%); padding: calc(76px * var(--site-spacing-scale)) 0 calc(68px * var(--site-spacing-scale)); }
+.hero-grid { display: grid; grid-template-columns: 1.08fr .92fr; gap: 45px; align-items: center; }
+.eyebrow, .kicker { color: #64e6d1; text-transform: uppercase; font-size: 11px; font-weight: 900; letter-spacing: 1.8px; }
+h1, h2, h3 { font-family: var(--site-font-heading); }
+.hero h1 { font-size: calc(clamp(42px, 5.6vw, 68px) * var(--site-heading-scale)); line-height: 1.02; letter-spacing: -2.8px; margin: 17px 0; }
+.hero-copy { max-width: 580px; color: #d5deed; font-size: 16px; line-height: 1.75; }
+.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 27px; }
+.hero-note { color: #aebbd0; font-size: 12px; margin-top: 20px; }
+.device-stage { min-height: 330px; display: grid; place-items: center; position: relative; }
+.glow { position: absolute; width: 270px; height: 270px; border-radius: 50%; background: #2864f0; filter: blur(85px); opacity: calc(.42 * var(--site-decoration-opacity)); }
+.phone { position: relative; width: 185px; height: 325px; border: 8px solid #29364b; border-radius: 34px; background: linear-gradient(145deg, #e0f2fe, #8bb4ff 48%, #354b9b); box-shadow: 0 35px 80px #0008; transform: rotate(8deg); }
+.phone:before { content: ""; position: absolute; width: 64px; height: 15px; top: 8px; left: 50%; transform: translateX(-50%); background: #182337; border-radius: 12px; }
+.phone:after { content: ""; position: absolute; inset: 70px 18px 22px; border-radius: 22px; border: 1px solid #ffffff80; background: linear-gradient(140deg,#ffffff99,#ffffff08); }
+.float-card { position: absolute; z-index: 2; padding: 14px 16px; border-radius: 14px; background: #fff; color: #101827; box-shadow: 0 15px 38px #0003; font-size: 12px; font-weight: 850; }
+.float-card small { display: block; margin-top: 4px; color: #64748b; font-weight: 550; }
+.fc1 { top: 50px; left: 0; } .fc2 { right: 0; bottom: 44px; }
+.trust { background: var(--surface); border-bottom: 1px solid var(--line); }
+.trustrow { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; padding: 20px 0; }
+.trustitem { display: flex; align-items: center; gap: 10px; color: #475569; font-size: 13px; font-weight: 750; }
+.check { display: grid; place-items: center; flex: 0 0 28px; height: 28px; border-radius: 9px; background: #e9f9f5; color: #087f67; font-weight: 900; }
+section { padding: calc(72px * var(--site-spacing-scale)) 0; }
+.section-head { max-width: 690px; margin: 0 auto 32px; text-align: center; }
+.kicker { color: var(--site-primary); font-size: 11px; }
+.section-head h2 { margin: 10px 0; font-size: calc(clamp(28px, 4vw, 41px) * var(--site-heading-scale)); letter-spacing: -1.5px; line-height: 1.12; }
+.section-head p { margin: 0; color: var(--muted); line-height: 1.7; font-size: 14px; }
+.repairs, .how, .brands { background: var(--surface); }
+.repair-tools { display: flex; justify-content: center; flex-wrap: wrap; gap: 9px; margin: 25px 0; }
+.filter { border: 1px solid var(--line); background: var(--surface); color: #475569; border-radius: 999px; padding: 10px 16px; font-size: 12px; font-weight: 800; cursor: pointer; }
+.filter.active { background: var(--site-secondary); color: #fff; border-color: var(--site-secondary); }
+.repair-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 14px; }
+.repair-card { border: 1px solid var(--line); border-radius: calc(17px * var(--site-radius-scale)); padding: 20px; background: var(--surface); transition: transform .2s, box-shadow .2s; }
+.repair-card:hover { transform: translateY(-3px); box-shadow: 0 14px 32px #172a4b12; }
+.repair-icon { width: 43px; height: 43px; display: grid; place-items: center; border-radius: 13px; background: var(--soft); color: var(--site-primary); font-size: 21px; }
+.repair-card h3 { font-size: 15px; margin: 15px 0 6px; }
+.repair-card p { color: var(--muted); font-size: 12px; line-height: 1.55; min-height: 37px; margin: 0; }
+.price { margin-top: 16px; font-size: 23px; font-weight: 900; letter-spacing: -.8px; }
+.price small { color: var(--muted); font-size: 11px; font-weight: 650; letter-spacing: 0; }
+.repair-foot { color: var(--muted); font-size: 12px; text-align: center; line-height: 1.6; margin-top: 22px; }
+.estimate { background: #edf2fa; }
+.estimate-box { max-width: 790px; margin: auto; padding: 28px; background: var(--surface); border: 1px solid var(--line); border-radius: calc(22px * var(--site-radius-scale)); box-shadow: 0 16px 40px #172a4b0a; }
+.formgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.field label, .contact-card label { display: block; color: #475569; font-size: 12px; font-weight: 850; margin-bottom: 8px; }
+.field select, .contact-card input, .contact-card textarea { width: 100%; padding: 13px; border: 1px solid #d9e0eb; border-radius: 11px; background: var(--surface); color: var(--ink); }
+.estimate-result { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: 18px; padding: 20px; border-radius: 15px; background: #101827; color: #fff; }
+.estimate-result small { display: block; color: #b8c4d7; }
+.estimate-result strong { display: block; font-size: 27px; margin-top: 4px; }
+.estimate-result p { margin: 5px 0 0; color: #b8c4d7; font-size: 11px; }
+.product-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+.product { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 20px; }
+.product-art { height: 145px; border-radius: 13px; background: linear-gradient(135deg,#e9f1ff,#f5f8ff); display: grid; place-items: center; font-size: 52px; }
+.product h3 { margin: 16px 0 5px; font-size: 17px; }
+.product p { color: var(--muted); font-size: 13px; line-height: 1.55; margin: 0; }
+.tag { display: inline-block; margin-top: 14px; padding: 7px 10px; border-radius: 8px; background: var(--soft); color: #2455c7; font-size: 10px; font-weight: 900; letter-spacing: .5px; }
+.brand-list { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; }
+.brand-chip { border: 1px solid var(--line); border-radius: 999px; padding: 10px 15px; background: #f8faff; color: #26344a; font-size: 12px; font-weight: 800; }
+.steps { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
+.step { padding: 23px; border: 1px solid var(--line); border-radius: 17px; background: var(--surface); }
+.num { color: var(--site-primary); font-size: 11px; font-weight: 950; letter-spacing: .7px; }
+.step h3 { margin: 12px 0 7px; font-size: 17px; }
+.step p { color: var(--muted); font-size: 13px; line-height: 1.65; margin: 0; }
+.contact { background: #101827; color: #fff; }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; align-items: center; }
+.contact h2 { font-size: calc(40px * var(--site-heading-scale)); letter-spacing: -1.5px; margin: 10px 0; }
+.contact-copy { color: #bdc8d9; line-height: 1.75; font-size: 14px; }
+.contact-card { padding: 24px; border: 1px solid #34435b; border-radius: 18px; background: #1c2a40; }
+.contact-card h3 { margin: 0 0 14px; }
+.contact-card label { color: #c6d1e1; margin: 12px 0 6px; }
+.contact-card input, .contact-card textarea { background: #101827; border-color: #40516b; color: #fff; }
+.contact-card textarea { min-height: 85px; resize: vertical; }
+.contact-card button { width: 100%; margin-top: 15px; }
+.form-note { color: #b8c4d7; font-size: 11px; line-height: 1.5; margin-bottom: 0; }
+footer { padding: 24px 0; background: #0b1220; color: #9eacc1; font-size: 11px; }
+.footerrow { display: flex; justify-content: space-between; gap: 14px; flex-wrap: wrap; }
+footer a { color: #fff; }
+@media (prefers-color-scheme: dark) {
+  :root { --site-background: #101827; --site-on-background: #f6f8fc; --surface: #172235; --line: #2c3a50; --muted: #a8b5c9; --soft: #223657; }
+  .trustitem, .navlinks, .field label { color: #c4cede; }
+  .brand-chip { background: #1c2a40; color: #e4ebf5; }
+  .estimate { background: #131f32; }
+  .field select { border-color: #40516b; }
+  .product-art { background: linear-gradient(135deg,#203452,#263b5b); }
+}
+@media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; } .device-stage { min-height: 280px; } .repair-grid { grid-template-columns: repeat(2,1fr); } }
+@media (max-width: 650px) {
+  .nav { min-height: 66px; } .navlinks { display: none; position: absolute; left: 0; right: 0; top: 66px; padding: 18px 4%; background: var(--surface); border-bottom: 1px solid var(--line); flex-direction: column; align-items: flex-start; gap: 17px; }
+  .navlinks.open { display: flex; } .menu-toggle { display: inline-flex; } .navcta { padding: 10px 12px; font-size: 11px; }
+  .hero { padding: 55px 0 42px; } .hero h1 { letter-spacing: -1.8px; } .hero-copy { font-size: 14px; }
+  .trustrow, .formgrid, .contact-grid, .steps, .product-grid { grid-template-columns: 1fr; }
+  .repair-grid { grid-template-columns: 1fr 1fr; gap: 9px; } .repair-card { padding: 14px; } .repair-card p { min-height: 54px; } .price { font-size: 20px; }
+  .estimate-box { padding: 18px; } .estimate-result { align-items: flex-start; flex-direction: column; } section { padding: 54px 0; }
+  .fc1 { left: -3px; } .fc2 { right: -3px; } .contact h2 { font-size: 34px; }
+}
+
+/* Professional refinement layer */
+:focus-visible { outline: 3px solid #64e6d1; outline-offset: 3px; }
+.nav { gap: 22px; }
+.brand { font-size: 15px; letter-spacing: -.35px; }
+.navcta { box-shadow: 0 8px 20px #2563eb30; }
+.hero { position: relative; }
+.hero:after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #8eb5ff88, transparent);
+  opacity: var(--site-decoration-opacity);
+}
+.hero h1 { max-width: 680px; }
+.hero-copy { font-size: 16px; }
+.btn { min-height: 46px; }
+.repair-card, .product, .step, .estimate-box, .contact-card, .faq-list details {
+  box-shadow: 0 8px 26px #14213b08;
+}
+.repair-card { display: flex; flex-direction: column; }
+.repair-card .price { margin-top: auto; padding-top: 15px; }
+.repair-card[hidden] { display: none; }
+.filter { transition: background .18s, color .18s, border-color .18s; }
+.filter:hover { border-color: var(--site-primary); }
+.faq { background: var(--site-background); }
+.faq-list { max-width: 820px; margin: 0 auto; display: grid; gap: 11px; }
+.faq-list details {
+  padding: 18px 20px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--surface);
+}
+.faq-list summary { cursor: pointer; font-weight: 800; font-size: 14px; color: var(--site-on-background); }
+.faq-list details p { color: var(--muted); font-size: 13px; line-height: 1.7; margin: 12px 0 0; }
+.contact-copy a { color: #9fc1ff; text-decoration: underline; text-underline-offset: 3px; }
+.contact-card input:focus, .contact-card textarea:focus, .field select:focus {
+  outline: 2px solid var(--site-primary);
+  outline-offset: 2px;
+}
+.form-note { max-width: 42ch; }
+.mobile-contact-bar {
+  display: none;
+}
+@media (max-width: 650px) {
+  body { padding-bottom: 64px; }
+  .mobile-contact-bar {
+    display: grid;
+    grid-template-columns: 1fr 1.25fr;
+    gap: 8px;
+    position: fixed;
+    z-index: 30;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 9px 12px calc(9px + env(safe-area-inset-bottom));
+    background: var(--surface);
+    border-top: 1px solid var(--line);
+    box-shadow: 0 -8px 24px #10182714;
+  }
+  .mobile-contact-bar a {
+    min-height: 43px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 11px;
+    font-size: 12px;
+    font-weight: 850;
+  }
+  .mobile-contact-bar .call { border: 1px solid var(--line); color: var(--site-on-background); }
+  .mobile-contact-bar .chat { background: var(--site-primary); color: #fff; }
+  .faq-list details { padding: 16px; }
+}
+
+
+.booking { background: #edf2fa; }
+.booking-card {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 28px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: calc(22px * var(--site-radius-scale));
+  box-shadow: 0 14px 36px #172a4b0a;
+}
+.booking-card input, .booking-card select, .booking-card textarea {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #d9e0eb;
+  border-radius: 11px;
+  background: var(--surface);
+  color: var(--site-on-background);
+}
+.booking-card textarea { min-height: 80px; resize: vertical; }
+.booking-card > button { margin-top: 18px; }
+.reviews { background: var(--surface); }
+.review-panel {
+  max-width: 850px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 25px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--surface);
+}
+.review-symbol {
+  flex: 0 0 54px;
+  height: 54px;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  background: #fff4d6;
+  color: #a66b00;
+  font-size: 27px;
+}
+.review-panel h3 { margin: 0 0 7px; font-size: 17px; }
+.review-panel p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.65; }
+.review-panel .btn { flex: 0 0 auto; }
+@media (max-width: 650px) {
+  .booking-card { padding: 18px; }
+  .review-panel { align-items: flex-start; flex-direction: column; padding: 20px; }
+  .review-panel .btn { width: 100%; }
+}
+@media (prefers-color-scheme: dark) {
+  .booking { background: #131f32; }
+  .booking-card input, .booking-card select, .booking-card textarea { border-color: #40516b; }
+}
+
+</style>
+</head>
+<body>
+<div id="app">
+<header><div class="wrap nav">
+  <a class="brand" href="#top">ALL MOBILE SERVICE<span>&amp; TECHNOLOGY</span></a>
+  <nav class="navlinks" id="navlinks" aria-label="Main navigation">
+    <a href="#repairs">Repair prices</a><a href="#estimate">Get estimate</a><a href="#phones">Phones</a><a href="#brands">Brands</a><a href="#booking">Book repair</a><a href="#reviews">Reviews</a><a href="#faq">FAQs</a><a href="#contact">Contact</a>
+  </nav>
+  <div style="display:flex;gap:8px;align-items:center"><a class="navcta" href="https://wa.me/916281143784?text=Hello%2C%20I%20want%20to%20enquire%20about%20a%20mobile%20repair." target="_blank" rel="noopener">WhatsApp us</a><button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">☰</button></div>
+</div></header>
+<main id="top">
+<section class="hero"><div class="wrap hero-grid"><div>
+  <div class="eyebrow">Mobile care, made simple</div><h1>Your phone.<br>Back to its best.</h1>
+  <p class="hero-copy">Reliable mobile repairs, clear starting prices and carefully selected smartphones — all in one place. Explore common repair costs before you visit.</p>
+  <div class="hero-actions"><a class="btn" href="#repairs">Explore repair services</a><a class="btn secondary" href="tel:+916281143784">Call 6281143784</a></div>
+  <p class="hero-note">Secunderabad, Hyderabad · Call 6281143784 · WhatsApp available</p>
+</div><div class="device-stage" aria-hidden="true"><div class="glow"></div><div class="phone"></div><div class="float-card fc1">✓ Screen repairs<small>Clear starting prices</small></div><div class="float-card fc2">Fast diagnosis<small>Ask before you repair</small></div></div></div></section>
+<div class="trust"><div class="wrap trustrow"><div class="trustitem"><span class="check">✓</span> Upfront repair estimates</div><div class="trustitem"><span class="check">✓</span> Multiple phone brands</div><div class="trustitem"><span class="check">✓</span> Repair and retail in one place</div></div></div>
+<section class="repairs" id="repairs"><div class="wrap"><div class="section-head"><div class="kicker">Repair price list</div><h2>Know the cost before you visit.</h2><p>Sample starting prices in Indian rupees. Final cost depends on phone model, part quality and inspection.</p></div>
+<div class="repair-tools" role="group" aria-label="Filter repair services"><button class="filter active" data-filter="all">All repairs</button><button class="filter" data-filter="screen">Screen</button><button class="filter" data-filter="battery">Battery</button><button class="filter" data-filter="charging">Charging</button><button class="filter" data-filter="software">Software</button></div>
+<div class="repair-grid" id="repairGrid">
+<article class="repair-card" data-type="screen"><div class="repair-icon">▣</div><h3>Screen replacement</h3><p>Display and touch-screen replacement.</p><div class="price">₹1,499 <small>onwards</small></div></article>
+<article class="repair-card" data-type="battery"><div class="repair-icon">▰</div><h3>Battery replacement</h3><p>Battery health and replacement service.</p><div class="price">₹899 <small>onwards</small></div></article>
+<article class="repair-card" data-type="charging"><div class="repair-icon">ϟ</div><h3>Charging port repair</h3><p>Charging port cleaning or replacement.</p><div class="price">₹399 <small>onwards</small></div></article>
+<article class="repair-card" data-type="software"><div class="repair-icon">⌘</div><h3>Software troubleshooting</h3><p>Software issues, updates and setup.</p><div class="price">₹299 <small>onwards</small></div></article>
+<article class="repair-card" data-type="screen"><div class="repair-icon">◉</div><h3>Back glass replacement</h3><p>Back panel glass repair or replacement.</p><div class="price">₹999 <small>onwards</small></div></article>
+<article class="repair-card" data-type="charging"><div class="repair-icon">⌁</div><h3>Speaker / mic repair</h3><p>Audio, microphone and earpiece checks.</p><div class="price">₹399 <small>onwards</small></div></article>
+<article class="repair-card" data-type="software"><div class="repair-icon">⌕</div><h3>Water damage diagnosis</h3><p>Inspection and repair assessment.</p><div class="price">₹299 <small>onwards</small></div></article>
+<article class="repair-card" data-type="battery"><div class="repair-icon">◌</div><h3>Phone diagnostics</h3><p>General hardware and performance check.</p><div class="price">₹199 <small>onwards</small></div></article>
+</div><p class="repair-foot"><strong>Important:</strong> These are indicative demo prices, not confirmed quotations. Final price depends on your phone model, parts and inspection. Please confirm on WhatsApp before visiting.</p>
+</div></section>
+<section class="estimate" id="estimate"><div class="wrap"><div class="section-head"><div class="kicker">Quick estimate</div><h2>Get a rough repair estimate.</h2><p>Select your phone brand and repair type to see a sample starting price.</p></div>
+<div class="estimate-box"><div class="formgrid"><div class="field"><label for="brand">Phone brand</label><select id="brand"><option>Samsung</option><option>Apple iPhone</option><option>Vivo</option><option>Oppo</option><option>Realme</option><option>Redmi</option><option>Xiaomi</option><option>OnePlus</option><option>Motorola</option><option>Nothing</option><option>iQOO</option><option>Google Pixel</option><option>Tecno</option><option>Other</option></select></div><div class="field"><label for="repair">Repair needed</label><select id="repair"><option value="1499" data-label="Screen replacement">Screen replacement — from ₹1,499</option><option value="899" data-label="Battery replacement">Battery replacement — from ₹899</option><option value="399" data-label="Charging port repair">Charging port — from ₹399</option><option value="299" data-label="Software troubleshooting">Software troubleshooting — from ₹299</option><option value="999" data-label="Back glass replacement">Back glass — from ₹999</option><option value="399" data-label="Speaker / mic repair">Speaker / mic — from ₹399</option><option value="299" data-label="Water damage diagnosis">Water damage diagnosis — from ₹299</option><option value="199" data-label="Phone diagnostics">Phone diagnostics — from ₹199</option></select></div></div>
+<div class="estimate-result"><div><small>Estimated starting price</small><strong id="estimatePrice">₹1,499 onwards</strong><p>Final quote after checking your exact model and device condition.</p></div><a class="btn secondary" id="estimateWhatsApp" href="https://wa.me/916281143784" target="_blank" rel="noopener">Ask on WhatsApp</a></div></div></div></section>
+<section class="products" id="phones"><div class="wrap"><div class="section-head"><div class="kicker">Shop smartphones</div><h2>Find your next phone.</h2><p>Showcase new and pre-owned phones here. Replace these sample categories with your actual stock and prices.</p></div><div class="product-grid"><article class="product"><div class="product-art">📱</div><h3>Latest smartphones</h3><p>Explore new models and popular brands.</p><span class="tag">ENQUIRE FOR PRICE</span></article><article class="product"><div class="product-art">✨</div><h3>Premium phones</h3><p>Discover feature-rich phones and upgrades.</p><span class="tag">ENQUIRE FOR PRICE</span></article><article class="product"><div class="product-art">♻️</div><h3>Pre-owned phones</h3><p>Browse inspected second-hand devices.</p><span class="tag">ENQUIRE FOR PRICE</span></article></div></div></section>
+<section class="brands" id="brands"><div class="wrap"><div class="section-head"><div class="kicker">Brands we service</div><h2>Repairs across popular brands.</h2><p>Choose your phone brand when requesting a repair estimate.</p></div><div class="brand-list"><span class="brand-chip">Samsung</span><span class="brand-chip">Apple</span><span class="brand-chip">Vivo</span><span class="brand-chip">Oppo</span><span class="brand-chip">Realme</span><span class="brand-chip">Redmi</span><span class="brand-chip">Xiaomi</span><span class="brand-chip">OnePlus</span><span class="brand-chip">Motorola</span><span class="brand-chip">Nothing</span><span class="brand-chip">iQOO</span><span class="brand-chip">Google Pixel</span><span class="brand-chip">Tecno</span></div></div></section>
+<section class="how"><div class="wrap"><div class="section-head"><div class="kicker">Simple process</div><h2>Repair in three easy steps.</h2></div><div class="steps"><article class="step"><div class="num">01 / TELL US</div><h3>Choose your issue</h3><p>Select the repair you need and note your phone brand and model.</p></article><article class="step"><div class="num">02 / GET A QUOTE</div><h3>Confirm the price</h3><p>Have the device checked and receive a final quote before work begins.</p></article><article class="step"><div class="num">03 / GET IT FIXED</div><h3>Collect your phone</h3><p>Approve the repair and ask the shop about service and part warranty.</p></article></div></div></section>
+
+
+<section class="booking" id="booking">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">Repair appointment</div>
+      <h2>Book a repair visit.</h2>
+      <p>Send your preferred date and time. The shop will confirm availability on WhatsApp.</p>
+    </div>
+    <form class="booking-card" id="bookingForm">
+      <div class="formgrid">
+        <div class="field"><label for="bookName">Your name</label><input id="bookName" required placeholder="Enter your name"></div>
+        <div class="field"><label for="bookPhone">Contact number</label><input id="bookPhone" required inputmode="tel" pattern="[0-9+() -]{8,18}" placeholder="Your phone number"></div>
+        <div class="field"><label for="bookModel">Phone model</label><input id="bookModel" required placeholder="e.g. iPhone 13 / Redmi Note"></div>
+        <div class="field"><label for="bookService">Repair needed</label><select id="bookService" required><option value="">Choose a service</option><option>Screen / display</option><option>Battery</option><option>Charging port</option><option>Speaker / microphone</option><option>Software issue</option><option>Water damage diagnosis</option><option>Other / not sure</option></select></div>
+        <div class="field"><label for="bookDate">Preferred date</label><input id="bookDate" type="date" required></div>
+        <div class="field"><label for="bookTime">Preferred time</label><select id="bookTime" required><option value="">Choose a time</option><option>10:00 AM – 12:00 PM</option><option>12:00 PM – 2:00 PM</option><option>2:00 PM – 4:00 PM</option><option>4:00 PM – 6:00 PM</option><option>6:00 PM – 8:00 PM</option></select></div>
+      </div>
+      <div class="field" style="margin-top:15px"><label for="bookNotes">Additional details (optional)</label><textarea id="bookNotes" placeholder="Briefly describe the problem"></textarea></div>
+      <button class="btn" type="submit">Send booking request on WhatsApp</button>
+      <p class="form-note">This sends a booking request, not a confirmed appointment. The shop must reply to confirm the date and time.</p>
+    </form>
+  </div>
+</section>
+
+<section class="reviews" id="reviews">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">Customer feedback</div>
+      <h2>Your experience matters.</h2>
+      <p>We want to hear about your repair experience. Genuine customer reviews will be displayed here after they are received and approved.</p>
+    </div>
+    <div class="review-panel">
+      <div class="review-symbol">★</div>
+      <div>
+        <h3>Have you visited our shop?</h3>
+        <p>Share honest feedback about the service, communication and repair experience. We do not publish invented ratings or testimonials.</p>
+      </div>
+      <a class="btn" id="reviewWhatsApp" href="https://wa.me/916281143784?text=Hello%2C%20I%20would%20like%20to%20share%20feedback%20about%20my%20experience." target="_blank" rel="noopener">Share your feedback</a>
+    </div>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">Helpful answers</div>
+      <h2>Frequently asked questions.</h2>
+      <p>Know what to expect before bringing in your phone.</p>
+    </div>
+    <div class="faq-list">
+      <details><summary>Are the prices shown on this website final?</summary><p>No. They are sample starting prices for demonstration. The final quote depends on your exact phone model, part availability and inspection. Please confirm the price before approving a repair.</p></details>
+      <details><summary>Do I need to book before visiting?</summary><p>It is best to call or send a WhatsApp enquiry first so the shop can confirm availability and advise you before you visit.</p></details>
+      <details><summary>Which phone brands can I enquire about?</summary><p>You can enquire about Samsung, Apple, Vivo, Oppo, Realme, Redmi, Xiaomi, OnePlus, Motorola and other popular brands.</p></details>
+      <details><summary>Will I be informed before a repair is started?</summary><p>Ask for the diagnosis, final price, part details and any applicable warranty terms before approving the repair.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact"><div class="wrap contact-grid"><div><div class="eyebrow">We're here to help</div><h2>Let's get your phone sorted.</h2><p class="contact-copy">Visit or contact us for mobile repair enquiries and smartphone assistance. We are based in Secunderabad, Hyderabad.</p><p class="contact-copy"><strong>Shop:</strong> All Mobile Service &amp; Technology<br><strong>Location:</strong> Secunderabad, Hyderabad<br><strong>Call:</strong> <a href="tel:+916281143784">6281143784</a><br><strong>WhatsApp:</strong> <a href="https://wa.me/916281143784" target="_blank" rel="noopener">Chat with us</a></p></div>
+<form class="contact-card" id="enquiry"><h3>Request a repair quote</h3><label for="customer">Your name</label><input id="customer" required placeholder="Enter your name"><label for="model">Phone model</label><input id="model" required placeholder="e.g. Samsung Galaxy A series"><label for="issue">What needs fixing?</label><textarea id="issue" required placeholder="Describe the issue"></textarea><button class="btn" type="submit">Send enquiry on WhatsApp</button><p class="form-note">Your enquiry will open in WhatsApp addressed to 6281143784. Review it and tap Send.</p></form>
+</div></section>
+</main>
+<div class="mobile-contact-bar" aria-label="Quick contact"><a class="call" href="#booking">Book a repair</a><a class="chat" href="https://wa.me/916281143784?text=Hello%2C%20I%20want%20to%20enquire%20about%20a%20mobile%20repair." target="_blank" rel="noopener">WhatsApp enquiry</a></div>
+<footer><div class="wrap footerrow"><span>© 2026 All Mobile Service &amp; Technology · Secunderabad, Hyderabad · <a href="tel:+916281143784">6281143784</a></span><span>Repair prices are indicative and subject to inspection.</span></div></footer>
+</div>
+<script>
+const repairCards = [...document.querySelectorAll('.repair-card')];
+document.querySelectorAll('.filter').forEach(button => {
+  button.addEventListener('click', () => {
+    document.querySelectorAll('.filter').forEach(item => item.classList.remove('active'));
+    button.classList.add('active');
+    const selected = button.dataset.filter;
+    repairCards.forEach(card => { card.hidden = selected !== 'all' && card.dataset.type !== selected; });
+  });
+});
+const repairSelect = document.getElementById('repair');
+const brandSelect = document.getElementById('brand');
+const priceOutput = document.getElementById('estimatePrice');
+const estimateLink = document.getElementById('estimateWhatsApp');
+function updateEstimate() {
+  const option = repairSelect.selectedOptions[0];
+  const price = Number(repairSelect.value).toLocaleString('en-IN');
+  priceOutput.textContent = `₹${price} onwards`;
+  const message = `Hello, I need a repair estimate. Brand: ${brandSelect.value}. Repair: ${option.dataset.label}. Sample starting price shown: ₹${price}. Please confirm the final quote.`;
+  estimateLink.href = `https://wa.me/916281143784?text=${encodeURIComponent(message)}`;
+}
+repairSelect.addEventListener('change', updateEstimate);
+brandSelect.addEventListener('change', updateEstimate);
+updateEstimate();
+document.getElementById('enquiry').addEventListener('submit', event => {
+  event.preventDefault();
+  const name = document.getElementById('customer').value.trim();
+  const model = document.getElementById('model').value.trim();
+  const issue = document.getElementById('issue').value.trim();
+  const message = `Hello, I would like a repair quote.\nName: ${name}\nPhone model: ${model}\nIssue: ${issue}`;
+  window.open(`https://wa.me/916281143784?text=${encodeURIComponent(message)}`, '_blank', 'noopener');
+});
+
+const bookingDate = document.getElementById('bookDate');
+const today = new Date();
+const localToday = new Date(today.getTime() - today.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
+bookingDate.min = localToday;
+document.getElementById('bookingForm').addEventListener('submit', event => {
+  event.preventDefault();
+  const details = {
+    name: document.getElementById('bookName').value.trim(),
+    phone: document.getElementById('bookPhone').value.trim(),
+    model: document.getElementById('bookModel').value.trim(),
+    service: document.getElementById('bookService').value,
+    date: document.getElementById('bookDate').value,
+    time: document.getElementById('bookTime').value,
+    notes: document.getElementById('bookNotes').value.trim()
+  };
+  const message = `Hello, I would like to request a repair appointment.\nName: ${details.name}\nContact number: ${details.phone}\nPhone model: ${details.model}\nRepair: ${details.service}\nPreferred date: ${details.date}\nPreferred time: ${details.time}\nAdditional details: ${details.notes || 'None'}\nPlease confirm availability.`;
+  window.open(`https://wa.me/916281143784?text=${encodeURIComponent(message)}`, '_blank', 'noopener');
+});
+
+const menuToggle = document.getElementById('menuToggle');
+const navlinks = document.getElementById('navlinks');
+menuToggle.addEventListener('click', () => {
+  const open = navlinks.classList.toggle('open');
+  menuToggle.setAttribute('aria-expanded', String(open));
+  menuToggle.textContent = open ? '✕' : '☰';
+});
+navlinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+  navlinks.classList.remove('open'); menuToggle.setAttribute('aria-expanded', 'false'); menuToggle.textContent = '☰';
+}));
+</script>
+</body>
+</html>
